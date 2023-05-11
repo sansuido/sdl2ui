@@ -1,0 +1,17 @@
+name: sdl2ui
+description: This is a library to make sdl2 easier to use.
+version: 0.1.0
+homepage: https://github.com/sansuido/sdl2ui
+repository: https://github.com/sansuido/sdl2ui
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  ffi: ^2.0.2
+  sdl2: ^1.5.1
+  archive: ^3.3.6
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
