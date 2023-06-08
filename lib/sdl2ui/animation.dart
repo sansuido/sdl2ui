@@ -2,7 +2,6 @@ import 'sprite_frame.dart';
 import 'internal/animation_frame.dart';
 
 class Animation {
-
   double _delayPerUnit = 0;
   int _totalDelayUnits = 0;
   int _loops = 0;
@@ -18,7 +17,8 @@ class Animation {
   int getLoops() => _loops;
   List<AnimationFrame> getAnimationFrames() => _animationFrames;
 
-  void initWithSpriteFrames(List<SpriteFrame> spriteFrames, double delayPerUnit, int loops) {
+  void initWithSpriteFrames(
+      List<SpriteFrame> spriteFrames, double delayPerUnit, int loops) {
     _delayPerUnit = delayPerUnit;
     _totalDelayUnits = 0;
     _loops = loops;

@@ -6,7 +6,7 @@ class EaseBounceIn extends EaseBounce {
 
   @override
   void update(double dt) {
-    var value = 1 - bounceTime(1- dt);
+    var value = 1 - bounceTime(1 - dt);
     innerAction.update(value);
   }
 }

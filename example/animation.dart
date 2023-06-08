@@ -76,11 +76,10 @@ class LocalDirector extends ui.Director {
     // create new window
     await addChild(LocalWindow()
       ..create(
-        title: 'animation (click: move)',
-        w: 640,
-        h: 360,
-        flags: SDL_WINDOW_RESIZABLE
-      ));
+          title: 'animation (click: move)',
+          w: 640,
+          h: 360,
+          flags: SDL_WINDOW_RESIZABLE));
   }
 
   @override

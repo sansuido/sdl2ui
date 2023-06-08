@@ -1,4 +1,3 @@
-
 import 'dart:ffi';
 import 'dart:math';
 import 'package:ffi/ffi.dart';
@@ -9,22 +8,26 @@ import 'internal/event.dart' as ui;
 import 'internal/event_manager.dart' as ui;
 
 class EventMouse extends ui.Event<EventMouseManager> {
-  void setMouseDown(Future<bool> Function(EventMouseManager, ui.Node) function) {
+  void setMouseDown(
+      Future<bool> Function(EventMouseManager, ui.Node) function) {
     list['onMouseDown'] = function;
   }
+
   void setMouseUp(Future<bool> Function(EventMouseManager, ui.Node) function) {
     list['onMouseUp'] = function;
   }
-  void setMouseMove(Future<bool> Function(EventMouseManager, ui.Node) function) {
+
+  void setMouseMove(
+      Future<bool> Function(EventMouseManager, ui.Node) function) {
     list['onMouseMove'] = function;
   }
+
   void setScroll(Future<bool> Function(EventMouseManager, ui.Node) function) {
     list['onScroll'] = function;
   }
 }
 
 class EventMouseManager extends ui.EventManager<EventMouse> {
-
   late int which;
   late int button;
   late int pressed;

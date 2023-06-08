@@ -1,10 +1,8 @@
-
 import '../node.dart';
 import 'internal/action.dart';
 import 'internal/action_interval.dart';
 
 class RepeatForever extends ActionInterval {
-
   late Action innerAction;
   RepeatForever(this.innerAction);
 
@@ -16,7 +14,7 @@ class RepeatForever extends ActionInterval {
 
   @override
   bool isDone() => false;
-  
+
   @override
   void step(double dt) {
     innerAction.step(dt);

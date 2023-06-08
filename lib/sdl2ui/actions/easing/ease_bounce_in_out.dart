@@ -9,7 +9,7 @@ class EaseBounceInOut extends EaseBounce {
     var value = 0.0;
     if (dt < 0.5) {
       dt *= 2;
-      value = (1 - bounceTime(1- dt)) * 0.5;
+      value = (1 - bounceTime(1 - dt)) * 0.5;
     } else {
       value = bounceTime(dt * 2 - 1) * 0.5 + 0.5;
     }

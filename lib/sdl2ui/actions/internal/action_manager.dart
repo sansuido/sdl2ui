@@ -11,7 +11,6 @@ class ActionHashElement {
 }
 
 class ActionManager {
-
   final _hashTargetList = <Node, ActionHashElement>{};
 
   void addAction(Action action, Node target, bool paused) {
@@ -99,7 +98,7 @@ class ActionManager {
         target.currentAction!.step(dt * 1);
         if (target.currentActionSalvaged == true) {
           target.currentAction = null;
-        } else if (target.currentAction!.isDone() == true){
+        } else if (target.currentAction!.isDone() == true) {
           target.currentAction!.stop();
           removeAction(action);
         }

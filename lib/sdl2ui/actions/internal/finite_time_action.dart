@@ -1,8 +1,6 @@
-
 import 'action.dart';
 
 class FiniteTimeAction extends Action {
-
   late double duration;
 
   FiniteTimeAction(this.duration);
@@ -11,7 +9,7 @@ class FiniteTimeAction extends Action {
   double getDuration() {
     return duration;
   }
- 
+
   void setDuration(double duration) {
     this.duration = duration;
   }

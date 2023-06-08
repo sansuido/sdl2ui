@@ -1,4 +1,3 @@
-
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
 import 'package:sdl2/sdl2.dart';
@@ -8,7 +7,6 @@ import 'node.dart' as ui;
 import 'window.dart' as ui;
 
 class Director extends ui.Node {
-
   //late TextureManager textureManager;
   //static final Director _instance = Director._internal();
   //factory Director() {
@@ -25,7 +23,7 @@ class Director extends ui.Node {
     await super.addChild(window);
     await window.requestResize();
   }
-  
+
   Future<bool> init([flags = SDL_INIT_EVERYTHING]) async {
     if (sdlInit(flags) != 0) {
       return false;
@@ -64,6 +62,7 @@ class Director extends ui.Node {
       fps.delay();
     }
   }
+
   void quit() {
     gfx.gfxFree();
     sdlQuit();

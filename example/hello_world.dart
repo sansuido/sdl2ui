@@ -3,7 +3,6 @@ import 'package:sdl2/sdl2.dart';
 import 'package:sdl2ui/sdl2ui.dart' as ui;
 
 class LocalWindow extends ui.Window {
-
   bool toggle = false;
 
   @override
@@ -28,7 +27,8 @@ class LocalWindow extends ui.Window {
           ui.EaseSineInOut(ui.MoveTo(3.0, rect.topRight)),
           ui.EaseSineInOut(ui.MoveTo(3.0, rect.bottomRight)),
           ui.EaseSineInOut(ui.MoveTo(3.0, rect.bottomLeft)),
-        ]))..setTag('forever'),
+        ]))
+          ..setTag('forever'),
         sprite,
         false);
     // click (pause and resume)

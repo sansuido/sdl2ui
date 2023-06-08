@@ -3,7 +3,6 @@ import 'package:sdl2/sdl2.dart';
 import 'package:sdl2ui/sdl2ui.dart' as ui;
 
 class LocalBox extends ui.Node {
-
   late int color;
 
   LocalBox(this.color);
@@ -17,7 +16,6 @@ class LocalBox extends ui.Node {
 }
 
 class LocalWindow extends ui.Window {
-
   @override
   Future ctor() async {
     await super.ctor();
@@ -44,57 +42,54 @@ class LocalWindow extends ui.Window {
     childBox.addChild(grandChildBox);
     // parent move action
     action.addAction(
-      ui.Sequence([
-        ui.DelayTime(1.0),
-        ui.MoveBy(0.5, math.Point(-30,   0)),
-        ui.DelayTime(1.0),
-        ui.MoveBy(0.5, math.Point(  0, -30)),
-        ui.DelayTime(1.0),
-        ui.MoveBy(0.5, math.Point( 30,   0)),
-        ui.DelayTime(1.0),
-        ui.MoveBy(0.5, math.Point(  0,  30)),
-        ui.DelayTime(1.0),
-        // delay and remove
-        ui.DelayTime(3.0),
-        ui.RemoveSelf(),
+        ui.Sequence([
+          ui.DelayTime(1.0),
+          ui.MoveBy(0.5, math.Point(-30, 0)),
+          ui.DelayTime(1.0),
+          ui.MoveBy(0.5, math.Point(0, -30)),
+          ui.DelayTime(1.0),
+          ui.MoveBy(0.5, math.Point(30, 0)),
+          ui.DelayTime(1.0),
+          ui.MoveBy(0.5, math.Point(0, 30)),
+          ui.DelayTime(1.0),
+          // delay and remove
+          ui.DelayTime(3.0),
+          ui.RemoveSelf(),
         ]),
-      parentBox,
-      false
-    );
+        parentBox,
+        false);
     // child move action
     action.addAction(
-      ui.Sequence([
-        ui.DelayTime(1.0),
-        ui.MoveBy(1.0, math.Point(-20,   0)),
-        ui.DelayTime(0.5),
-        ui.MoveBy(1.0, math.Point(  0, -20)),
-        ui.DelayTime(0.5),
-        ui.MoveBy(1.0, math.Point( 20,   0)),
-        ui.DelayTime(0.5),
-        ui.MoveBy(1.0, math.Point(  0,  20)),
-        ui.DelayTime(0.5),
-        // delay and remove
-        ui.DelayTime(2.0),
-        ui.RemoveSelf(),
+        ui.Sequence([
+          ui.DelayTime(1.0),
+          ui.MoveBy(1.0, math.Point(-20, 0)),
+          ui.DelayTime(0.5),
+          ui.MoveBy(1.0, math.Point(0, -20)),
+          ui.DelayTime(0.5),
+          ui.MoveBy(1.0, math.Point(20, 0)),
+          ui.DelayTime(0.5),
+          ui.MoveBy(1.0, math.Point(0, 20)),
+          ui.DelayTime(0.5),
+          // delay and remove
+          ui.DelayTime(2.0),
+          ui.RemoveSelf(),
         ]),
-      childBox,
-      false
-    );
+        childBox,
+        false);
     // granChild move action
     action.addAction(
-      ui.Sequence([
-        ui.DelayTime(1.0),
-        ui.MoveBy(1.5, math.Point( -5,   0)),
-        ui.MoveBy(1.5, math.Point(  0,  -5)),
-        ui.MoveBy(1.5, math.Point(  5,   0)),
-        ui.MoveBy(1.5, math.Point(  0,   5)),
-        // delay and remove
-        ui.DelayTime(1.0),
-        ui.RemoveSelf(),
+        ui.Sequence([
+          ui.DelayTime(1.0),
+          ui.MoveBy(1.5, math.Point(-5, 0)),
+          ui.MoveBy(1.5, math.Point(0, -5)),
+          ui.MoveBy(1.5, math.Point(5, 0)),
+          ui.MoveBy(1.5, math.Point(0, 5)),
+          // delay and remove
+          ui.DelayTime(1.0),
+          ui.RemoveSelf(),
         ]),
-      grandChildBox,
-      false
-    );
+        grandChildBox,
+        false);
   }
 }
 
@@ -102,12 +97,12 @@ class LocalDirector extends ui.Director {
   @override
   Future ctor() async {
     await super.ctor();
-    await addChild(LocalWindow()..create(
-      title: 'scale and child elements',
-      w: 640,
-      h: 360,
-      flags: SDL_WINDOW_RESIZABLE
-    ));
+    await addChild(LocalWindow()
+      ..create(
+          title: 'scale and child elements',
+          w: 640,
+          h: 360,
+          flags: SDL_WINDOW_RESIZABLE));
   }
 }
 

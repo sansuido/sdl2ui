@@ -7,7 +7,8 @@ class LocalWindow extends ui.Window {
   Future draw(ui.NodeContext context) async {
     var director = getAncestor<ui.Director>()!;
     var bb = getWorldBoundingBox();
-    context.renderer.stringColor(bb.topLeft + math.Point(8, 8), 'FPS:${director.fps.getMeasFramerate()}', SdlColorEx.red);
+    context.renderer.stringColor(bb.topLeft + math.Point(8, 8),
+        'FPS:${director.fps.getMeasFramerate()}', SdlColorEx.red);
   }
 }
 
@@ -15,12 +16,8 @@ class LocalDirector extends ui.Director {
   @override
   Future ctor() async {
     await super.ctor();
-    await addChild(LocalWindow()..create(
-      title: 'demo',
-      w: 640,
-      h: 360,
-      flags: SDL_WINDOW_RESIZABLE
-    ));
+    await addChild(LocalWindow()
+      ..create(title: 'demo', w: 640, h: 360, flags: SDL_WINDOW_RESIZABLE));
   }
 }
 

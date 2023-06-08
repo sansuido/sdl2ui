@@ -4,7 +4,6 @@ import 'internal/action_interval.dart';
 import '../animation.dart';
 
 class Animate extends ActionInterval {
-
   late int _nextFrame;
   late Animation _animation;
   late List<double> _splitTimes;
@@ -49,8 +48,7 @@ class Animate extends ActionInterval {
           target.setSpriteFrame(animationFrames[i].spriteFrame);
         }
         _nextFrame = i + 1;
-      }
-      else {
+      } else {
         break;
       }
     }

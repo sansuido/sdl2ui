@@ -1,4 +1,3 @@
-
 import '../../node.dart';
 
 class Action {
@@ -19,11 +18,11 @@ class Action {
   void update(double dt) {}
   bool isDone() => true;
   double getDuration() => 0;
-  int getTimesForRepeat() => 1; 
+  int getTimesForRepeat() => 1;
   double getElapsed() => 0;
   Node? getTarget() => _target;
   //Node? getOriginalTarget() => _originalTarget;
-  
+
   String? getTag() => _tag;
 
   void setTag(String? tag) {

@@ -23,7 +23,6 @@ class TtfStatus {
 }
 
 class TtfManager {
-
   late Pointer<SdlRenderer> renderer;
   var list = <String, Pointer<SdlTexture>>{};
   var _defaultFontFile = '';
@@ -35,7 +34,8 @@ class TtfManager {
 
   TtfManager(this.renderer);
 
-  String _createKey(String fontFile, int fontSize, int textColor, int? backgroundColor, int style, int outline, String text) {
+  String _createKey(String fontFile, int fontSize, int textColor,
+      int? backgroundColor, int style, int outline, String text) {
     return '$fontFile:$fontSize:$textColor:$backgroundColor:$style:$outline:$text';
   }
 
@@ -88,7 +88,8 @@ class TtfManager {
     outline ??= _defaultOutline;
 
     Pointer<SdlTexture> result = nullptr;
-    var key = _createKey(fontFile, fontSize, textColor, backgroundColor, style, outline, text);
+    var key = _createKey(
+        fontFile, fontSize, textColor, backgroundColor, style, outline, text);
     if (list[key] != null) {
       result = list[key]!;
     } else {

@@ -2,7 +2,6 @@ import '../../node.dart';
 import 'finite_time_action.dart';
 
 class ActionInterval extends FiniteTimeAction {
-
   var _timesForRepeat = 1;
   //var _timeForRepeat = 0;
   var _firstTick = false;
@@ -27,12 +26,14 @@ class ActionInterval extends FiniteTimeAction {
   }
 
   @override
- double getDuration() {
+  double getDuration() {
     return super.getDuration() * (_timesForRepeat > 1 ? _timesForRepeat : 1);
   }
 
   @override
-  int getTimesForRepeat() { return _timesForRepeat; }
+  int getTimesForRepeat() {
+    return _timesForRepeat;
+  }
 
   @override
   void step(double dt) {
@@ -69,5 +70,4 @@ class ActionInterval extends FiniteTimeAction {
     _elapsed = 0;
     _firstTick = true;
   }
-
 }

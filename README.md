@@ -5,7 +5,7 @@ SDL2UI
 
 * ffi ^2.0.2
 * sdl2 ^1.5.1
-* archive: ^3.3.6
+* archive: ^3.3.7
 
 # Note
 

@@ -6,7 +6,6 @@ import '../../node.dart' as ui;
 import 'event.dart' as ui;
 
 class EventManager<T> {
-
   final list = <ui.Node, T>{};
   int type = 0;
 
@@ -70,7 +69,7 @@ class EventManager<T> {
       }
     }
     for (var entry in list.entries) {
-      var event = entry.value  as ui.Event;
+      var event = entry.value as ui.Event;
       var bl = await event.call(eventName, this, entry.key);
       if (bl) {
         return;

@@ -7,16 +7,17 @@ import 'internal/event.dart' as ui;
 import 'internal/event_manager.dart' as ui;
 
 class EventKeyboard extends ui.Event<EventKeyboardManager> {
-  void setKeyDown(Future<bool> Function(EventKeyboardManager, ui.Node) function) {
+  void setKeyDown(
+      Future<bool> Function(EventKeyboardManager, ui.Node) function) {
     list['onKeyDown'] = function;
   }
+
   void setKeyUp(Future<bool> Function(EventKeyboardManager, ui.Node) function) {
     list['onKeyUp'] = function;
   }
 }
 
 class EventKeyboardManager extends ui.EventManager<EventKeyboard> {
-
   int sym = 0;
   int mod = 0;
   int scancode = 0;

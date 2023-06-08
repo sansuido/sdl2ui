@@ -10,13 +10,14 @@ class EventText extends ui.Event<EventTextManager> {
   void setTextInput(Future<bool> Function(EventTextManager, ui.Node) function) {
     list['onTextInput'] = function;
   }
-  void setTextEditing(Future<bool> Function(EventTextManager, ui.Node) function) {
+
+  void setTextEditing(
+      Future<bool> Function(EventTextManager, ui.Node) function) {
     list['onTextEditing'] = function;
   }
 }
 
 class EventTextManager extends ui.EventManager<EventText> {
-
   String text = '';
   int start = 0;
   int length = 0;
@@ -26,19 +27,18 @@ class EventTextManager extends ui.EventManager<EventText> {
     start = 0;
     length = 0;
   }
-  
+
   void _loadFromSdlTextEditingEvent(Pointer<SdlTextEditingEvent> event) {
     text = event.text;
     start = event.ref.start;
     length = event.ref.length;
   }
-  
+
   void _loadFromSdlTextEditingExtEvent(Pointer<SdlTextEditingExtEvent> event) {
     text = event.ref.text.cast<Utf8>().toDartString();
     start = event.ref.start;
     length = event.ref.length;
   }
-  
 
   @override
   Future handleEvents(Pointer<SdlEvent> event) async {

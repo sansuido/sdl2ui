@@ -4,11 +4,10 @@ import 'package:sdl2/sdl2.dart';
 import 'package:archive/archive.dart';
 
 class ImageManager {
-
   late Pointer<SdlRenderer> renderer;
 
   ImageManager(this.renderer);
-  
+
   var list = <String, Pointer<SdlTexture>>{};
 
   Pointer<SdlTexture> loadTexture(String filename, {Archive? archive}) {

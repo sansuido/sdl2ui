@@ -1,10 +1,8 @@
-
 import '../../../node.dart';
 import '../../internal/action.dart';
 import '../../internal/action_interval.dart';
 
 class ActionEase extends ActionInterval {
-
   late Action innerAction;
 
   ActionEase(this.innerAction) {

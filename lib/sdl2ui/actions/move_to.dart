@@ -4,8 +4,9 @@ import 'move_by.dart';
 
 class MoveTo extends MoveBy {
   late math.Point<double> _endPosition;
-  
-  MoveTo(double duration, math.Point<double> position) : super(duration, position) {
+
+  MoveTo(double duration, math.Point<double> position)
+      : super(duration, position) {
     initWithPosition(duration, position);
   }
 

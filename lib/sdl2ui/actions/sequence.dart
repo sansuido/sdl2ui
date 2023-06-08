@@ -1,4 +1,3 @@
-
 import '../node.dart';
 import 'internal/action.dart';
 import 'internal/action_interval.dart';
@@ -7,7 +6,7 @@ class Sequence extends ActionInterval {
   late List<Action> _actionList;
   double _split = 0;
   var _last = -1;
-  
+
   Sequence([List<Action>? actions]) {
     if (actions != null && actions.isNotEmpty) {
       var prev = actions[0];
@@ -61,7 +60,7 @@ class Sequence extends ActionInterval {
       if (_split == 1) {
         newDt = 1;
       } else {
-			  newDt = (dt - _split) / (1 - _split);
+        newDt = (dt - _split) / (1 - _split);
       }
       if (_last == -1) {
         _actionList[0].startWithTarget(getTarget());

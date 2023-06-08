@@ -7,7 +7,6 @@ import 'node_context.dart' as ui;
 import 'window.dart' as ui;
 
 class Node {
-  
   Node? _parent;
   final _children = <Node>[];
   final _eventList = <ui.Event>[];
@@ -58,7 +57,7 @@ class Node {
       await _parent!.remove(this);
     }
   }
-  
+
   // local
   double getScale() {
     return _scale;
@@ -121,7 +120,8 @@ class Node {
 
   Point<double> getWorldAnchorPointInPoints() {
     var contentSize = getWorldContentSize();
-    return Point<double>(contentSize.x * _anchorPoint.x, contentSize.y * _anchorPoint.y);
+    return Point<double>(
+        contentSize.x * _anchorPoint.x, contentSize.y * _anchorPoint.y);
   }
 
   Point<double> convertToWorldSpace([Point<double>? point]) {
@@ -160,7 +160,8 @@ class Node {
     var worldSpace = convertToWorldSpace();
     var contentSize = getWorldContentSize();
     calc ??= Point<double>(0, 0);
-    return Rectangle<double>(worldSpace.x, worldSpace.y, contentSize.x + calc.x, contentSize.y + calc.y);
+    return Rectangle<double>(worldSpace.x, worldSpace.y, contentSize.x + calc.x,
+        contentSize.y + calc.y);
   }
 
   Rectangle<double>? getWorldIntersectBox() {
@@ -221,7 +222,7 @@ class Node {
     await lateUpdate();
     await lateDraw(context);
   }
-  
+
   Future walkResize() async {
     await resize();
     var children = getCloneChildren();
@@ -245,7 +246,7 @@ class Node {
   Future draw(ui.NodeContext context) async {}
   Future lateUpdate() async {}
   Future lateDraw(ui.NodeContext context) async {}
-  Future resize() async {} 
+  Future resize() async {}
   Future destroy() async {
     // remove stack event
     var eventList = [..._eventList];
