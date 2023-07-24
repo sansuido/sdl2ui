@@ -17,6 +17,8 @@ export 'sdl2ui/actions/move_to.dart';
 export 'sdl2ui/actions/remove_self.dart';
 export 'sdl2ui/actions/repeat_forever.dart';
 export 'sdl2ui/actions/sequence.dart';
+export 'sdl2ui/buttons/button.dart';
+export 'sdl2ui/buttons/toggle_button.dart';
 export 'sdl2ui/events/event_drop_manager.dart';
 export 'sdl2ui/events/event_keyboard_manager.dart';
 export 'sdl2ui/events/event_mouse_manager.dart';
