@@ -1,11 +1,11 @@
 import 'dart:math';
 import 'package:sdl2/sdl2.dart';
-import '../node.dart' as ui;
-import '../sprite.dart' as ui;
-import '../sprite_frame.dart' as ui;
-import '../events/event_mouse_manager.dart' as ui;
+import '../control.dart' as ui;
+import '../../sprite.dart' as ui;
+import '../../sprite_frame.dart' as ui;
+import '../../events/event_mouse_manager.dart' as ui;
 
-class Button extends ui.Node {
+class Button extends ui.Control {
   ui.SpriteFrame normal;
   ui.SpriteFrame? selected;
 

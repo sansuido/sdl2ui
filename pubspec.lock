@@ -237,10 +237,10 @@ packages:
     dependency: "direct main"
     description:
       name: sdl2
-      sha256: db55471ac3a204265e21004cd506809eaa9583745f1d2a7a7d049e6f84efb542
+      sha256: c25b39d7e980ab877bfb5081e1376041422c4012ebdf5f80e62dea707498a61d
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.2"
+    version: "1.5.3"
   shelf:
     dependency: transitive
     description:
@@ -402,4 +402,4 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.0.6 <4.0.0"
+  dart: ">=3.0.7 <4.0.0"

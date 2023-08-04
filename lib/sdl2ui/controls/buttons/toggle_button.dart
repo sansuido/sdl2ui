@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'button.dart' as ui;
-import '../sprite_frame.dart' as ui;
+import '../../sprite_frame.dart' as ui;
 
 class ToggleButton extends ui.Button {
   late ui.SpriteFrame offNormal;

@@ -9,6 +9,7 @@ import 'window.dart' as ui;
 class Node {
   Node? _parent;
   final _children = <Node>[];
+  final _waitEventList = <ui.Event>[];
   final _eventList = <ui.Event>[];
   Point<double> _position = Point<double>(0, 0);
   Point<double> _contentSize = Point<double>(0, 0);
@@ -73,6 +74,19 @@ class Node {
 
   void setPosition(Point<double> position) {
     _position = position;
+  }
+
+  Point<double> getAnchorPointInPoints() {
+    return Point<double>(
+        _contentSize.x * _anchorPoint.x, _contentSize.y * _anchorPoint.y);
+  }
+
+  Point<double> getPositionAR() {
+    return getPosition() - getAnchorPointInPoints();
+  }
+
+  void setPositionAR(Point<double> position) {
+    setPosition(position + getAnchorPointInPoints());
   }
 
   Point<double> getContentSize() {
@@ -195,11 +209,20 @@ class Node {
   // event
   void addEvent(ui.Event event, {Node? owner}) {
     owner ??= this;
-    var window = getAncestor<ui.Window>();
-    if (window != null) {
-      window.addEventListener(owner, event);
+    _waitEventList.add(event);
+  }
+
+  void refreshWaitEvent() {
+    if (_waitEventList.isNotEmpty) {
+      var window = getAncestor<ui.Window>();
+      if (window != null) {
+        for (var event in _waitEventList) {
+          window.addEventListener(this, event);
+          _eventList.add(event);
+        }
+        _waitEventList.clear();
+      }
     }
-    _eventList.add(event);
   }
 
   void removeEvent(ui.Event event, {Node? owner}) {
@@ -213,6 +236,7 @@ class Node {
 
   // walk
   Future walkUpdateAndDraw(ui.NodeContext context) async {
+    refreshWaitEvent();
     await update(context);
     await draw(context);
     var children = getCloneChildren();
