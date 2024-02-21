@@ -12,15 +12,12 @@ class SystemColors {
 
 class LocalToggleButton extends ui.ToggleButton {
   LocalToggleButton(
-      {required offNormal, offSelected, onNormal, onSelected, onToggle})
-      : super(
-            offNormal: offNormal,
-            offSelected: offSelected,
-            onNormal: onNormal,
-            onSelected: onSelected,
-            onToggle: onToggle,
-            padding: 1,
-            shift: Point<double>(1, 1));
+      {required super.offNormal,
+      super.offSelected,
+      super.onNormal,
+      super.onSelected,
+      super.onToggle})
+      : super(padding: 1, shift: Point<double>(1, 1));
 
   @override
   Future draw(ui.NodeContext context) async {

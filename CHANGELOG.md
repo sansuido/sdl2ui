@@ -1,3 +1,7 @@
+## 0.1.4
+- [update] Changed to store and use standard fonts as binary data.
+- [fixed] Fixed a bug in ActionManager.removeHashElement.
+
 ## 0.1.3
 - [add] Added Sizer and Spacer extends Control (and example).
 

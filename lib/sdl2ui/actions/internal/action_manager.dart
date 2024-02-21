@@ -33,7 +33,7 @@ class ActionManager {
   }
 
   void removeHashElement(ActionHashElement element) {
-    _hashTargetList.remove(element);
+    _hashTargetList.removeWhere((key, value) => value == element);
   }
 
   void resumeTarget(Node target) {
@@ -86,7 +86,7 @@ class ActionManager {
   }
 
   void update(double dt) {
-    var targetList = _hashTargetList.values;
+    var targetList = [..._hashTargetList.values];
     for (var target in targetList) {
       if (target.paused == true) {
         continue;

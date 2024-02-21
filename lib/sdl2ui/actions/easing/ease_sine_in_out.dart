@@ -1,9 +1,8 @@
 import 'dart:math' as math;
-import '../internal/action.dart';
 import 'internal/action_ease.dart';
 
 class EaseSineInOut extends ActionEase {
-  EaseSineInOut(Action innerAction) : super(innerAction);
+  EaseSineInOut(super.innerAction);
 
   @override
   void update(double dt) {

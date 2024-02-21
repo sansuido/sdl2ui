@@ -192,7 +192,7 @@ class Node {
       var aPointer = a.calloc();
       var bPointer = b.calloc();
       var resultPointer = calloc<SdlRect>();
-      var bl = sdlIntersectRect(aPointer, bPointer, resultPointer) == SDL_TRUE;
+      var bl = sdlIntersectRect(aPointer, bPointer, resultPointer) == true;
       if (bl == true) {
         a = resultPointer.create();
       } else {

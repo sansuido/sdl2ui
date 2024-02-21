@@ -1,8 +1,7 @@
-import '../../internal/action.dart';
 import 'action_ease.dart';
 
 class EaseBounce extends ActionEase {
-  EaseBounce(Action innerAction) : super(innerAction);
+  EaseBounce(super.innerAction);
 
   double bounceTime(double time1) {
     if (time1 < (1 / 2.75)) {

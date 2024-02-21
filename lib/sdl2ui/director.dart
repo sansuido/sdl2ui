@@ -25,7 +25,11 @@ class Director extends ui.Node {
   }
 
   Future<bool> init([flags = SDL_INIT_EVERYTHING]) async {
-    if (sdlInit(flags) != 0) {
+    if (sdlInit(flags) < 0) {
+      return false;
+    }
+    if (ttfInit() < 0) {
+      sdlQuit();
       return false;
     }
     fps = gfx.FpsManager()
@@ -65,6 +69,7 @@ class Director extends ui.Node {
 
   void quit() {
     gfx.gfxFree();
+    ttfQuit();
     sdlQuit();
   }
 }

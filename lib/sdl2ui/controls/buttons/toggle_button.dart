@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'button.dart' as ui;
 import '../../sprite_frame.dart' as ui;
 
@@ -16,13 +15,9 @@ class ToggleButton extends ui.Button {
       this.onNormal,
       this.onSelected,
       this.onToggle,
-      double? padding,
-      Point<double>? shift})
-      : super(
-            normal: offNormal,
-            selected: offSelected,
-            padding: padding,
-            shift: shift) {
+      super.padding,
+      super.shift})
+      : super(normal: offNormal, selected: offSelected) {
     onClick = _onClick;
   }
 

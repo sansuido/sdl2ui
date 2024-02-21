@@ -21,7 +21,9 @@ class LocalWindow extends ui.Window {
     var outFrameBoxSizer = ui.BoxSizer();
     await addChild(outFrameBoxSizer);
     // header
-    var header = LocalBox()..szHeight = 30..szBorder = 0;
+    var header = LocalBox()
+      ..szHeight = 30
+      ..szBorder = 0;
     await outFrameBoxSizer.addChild(header);
     // headerBoxSizer
     var headerBoxSizer = ui.BoxSizer(horizontal: true);
@@ -46,7 +48,9 @@ class LocalWindow extends ui.Window {
       ..szAlign = 1.0);
     await outFrameBoxSizer.addChild(inFrameBoxSizer);
     // footer
-    await outFrameBoxSizer.addChild(LocalBox()..szHeight = 30..szBorder = 0);
+    await outFrameBoxSizer.addChild(LocalBox()
+      ..szHeight = 30
+      ..szBorder = 0);
     // add buttons
     await headerBoxSizer.addChild(ui.Spacer()..szWidth = -1);
     for (var i = 0; i < 3; i++) {

@@ -1,8 +1,7 @@
-import '../internal/action.dart';
 import 'internal/action_ease.dart';
 
 class EaseBackOut extends ActionEase {
-  EaseBackOut(Action innerAction) : super(innerAction);
+  EaseBackOut(super.innerAction);
 
   @override
   void update(double dt) {

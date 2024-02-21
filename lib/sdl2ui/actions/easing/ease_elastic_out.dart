@@ -1,9 +1,8 @@
 import 'dart:math' as math;
-import '../internal/action.dart';
 import 'internal/action_ease.dart';
 
 class EaseElasticOut extends ActionEase {
-  EaseElasticOut(Action innerAction) : super(innerAction);
+  EaseElasticOut(super.innerAction);
 
   @override
   void update(double dt) {

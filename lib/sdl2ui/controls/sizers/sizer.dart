@@ -1,4 +1,3 @@
 import '../control.dart' as ui;
 
-class Sizer extends ui.Control {
-}
+class Sizer extends ui.Control {}

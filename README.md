@@ -3,9 +3,9 @@ SDL2UI
 
 # Requirement
 
-* ffi ^2.0.2
-* sdl2 ^1.5.3
-* archive: ^3.3.7
+* ffi ^2.1.2
+* sdl2 ^1.7.1
+* archive: ^3.4.10
 
 # Note
 

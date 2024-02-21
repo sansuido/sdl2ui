@@ -8,8 +8,6 @@ class LocalWindow extends ui.Window {
   @override
   Future ctor() async {
     await super.ctor();
-    // use default setting
-    //ttf.setDefaultFontFile('assets/SourceHanCodeJP-Normal.otf');
     // create sprite(hello world)
     var texture = ttf.loadTexture('Hello world.',
         fontFile: 'assets/SourceHanCodeJP-Normal.otf',
@@ -53,8 +51,6 @@ class LocalDirector extends ui.Director {
   @override
   Future ctor() async {
     await super.ctor();
-    // ttf open
-    ttfInit();
     // create new window
     await addChild(LocalWindow()
       ..create(
@@ -62,13 +58,6 @@ class LocalDirector extends ui.Director {
         w: 640,
         h: 360,
       ));
-  }
-
-  @override
-  Future destroy() async {
-    await super.destroy();
-    // ttf close
-    ttfQuit();
   }
 }
 

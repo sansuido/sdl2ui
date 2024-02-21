@@ -1,8 +1,7 @@
-import '../internal/action.dart';
 import 'internal/ease_bounce.dart';
 
 class EaseBounceIn extends EaseBounce {
-  EaseBounceIn(Action innerAction) : super(innerAction);
+  EaseBounceIn(super.innerAction);
 
   @override
   void update(double dt) {
